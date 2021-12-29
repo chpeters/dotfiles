@@ -1,4 +1,12 @@
-- clean: ['~']
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/bin']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
 
 - link:
     ~/.bashrc: bashrc
@@ -7,8 +15,19 @@
         path: ssh/config
         create: true
     ~/.tmux.conf: tmux.conf
+
     ~/.vimrc: vimrc
+
+    ~/.config/nvim:
+      path: nvim
+      force: true
+    ~/.config/coc: coc
+    ~/.config/karabiner: karabiner
+
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
 
+    ~/bin:
+      path: scripts
+      relink: true
 

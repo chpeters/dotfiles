@@ -97,7 +97,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias vimdiff='nvim -d'
 export EDITOR=nvim
-alias workspace=". ~/Dev/scripts/makeWorkspace.sh"
+alias workspace=". makeWorkspace.sh"
 alias gg='gaa && gc && gp'
 alias ls='exa --classify'
 alias cat="bat"
@@ -106,8 +106,7 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-
+export PATH=$PATH:$HOME/bin
 
 
 

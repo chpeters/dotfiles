@@ -1,0 +1,27 @@
+snippet restate "React useState hook" b
+const [$1, set${1/\w+/${0:/capitalize}/}] = useState($2);
+endsnippet
+
+snippet int "interface"
+interface ${1} {
+	$0
+}
+endsnippet
+
+snippet fun "function (named)" b
+const ${1:function_name} = (${2:argument}) => {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet rfc "react functional component"
+import React, { FC } from "react"
+
+interface ${1:function_name}Props {
+	${4:props_types}
+}
+
+export const ${1:function_name}: FC<${1:function_name}Props> = (${2:props}) => {
+	return ${3:function_body}
+}
+endsnippet

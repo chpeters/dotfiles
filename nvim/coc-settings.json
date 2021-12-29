@@ -1,0 +1,17 @@
+{
+  "coc.source.iced.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "typescript", "typescriptreact", "javascriptreact", "markdown"],
+  "suggest.noselect": false,
+  "languageserver": {
+    "dart": {
+      "command": "dart",
+      "args": [
+        "/usr/local/opt/dart/libexec/bin/snapshots/analysis_server.dart.snapshot",
+        "--lsp"
+      ],
+      "filetypes": ["dart"],
+      "disableDynamicRegister": true,
+      "trace.server": "verbose"
+    }
+  }
+}
