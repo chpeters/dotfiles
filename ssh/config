@@ -1,0 +1,15 @@
+
+
+# --- SourceTree Generated ---
+Host chpeters-GitHub
+	HostName github.com
+	User chpeters
+	PreferredAuthentications publickey
+	IdentityFile /Users/charlie/.ssh/chpeters-GitHub
+	UseKeychain yes
+	AddKeysToAgent yes
+# ----------------------------
+
+
+Host *
+    UseKeychain yes
