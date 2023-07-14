@@ -1,6 +1,6 @@
 {
   "coc.source.iced.enable": true,
-  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "typescript", "typescriptreact", "javascriptreact", "markdown"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "typescript", "typescriptreact", "javascriptreact"],
   "suggest.noselect": false,
   "languageserver": {
     "dart": {

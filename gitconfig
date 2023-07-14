@@ -12,3 +12,5 @@
 	email = chpeters13@gmail.com
 [commit]
 	template = /Users/charlie/.stCommitMsg
+[push]
+	autoSetupRemote = true

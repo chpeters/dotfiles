@@ -15,13 +15,11 @@ const ${1:function_name} = (${2:argument}) => {
 endsnippet
 
 snippet rfc "react functional component"
-import React, { FC } from "react"
-
 interface ${1:function_name}Props {
-	${4:props_types}
+	${3:props_types}
 }
 
-export const ${1:function_name}: FC<${1:function_name}Props> = (${2:props}) => {
-	return ${3:function_body}
+export const ${1:function_name} = (${2:props}: ${1:function_name}Props) => {
+	return ${4:function_body}
 }
 endsnippet

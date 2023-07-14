@@ -138,7 +138,7 @@ endif
 
 
 " Add a bit extra margin to the left
-set foldcolumn=0
+set foldcolumn=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -152,12 +152,8 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-call plug#begin('~/.vim/plugged')
-Plug 'hzchirs/vim-material'
-call plug#end()
-
 try
-    colorscheme vim-material 
+    colorscheme desert
 catch
 endtry
 
