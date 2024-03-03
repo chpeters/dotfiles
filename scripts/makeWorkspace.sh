@@ -21,13 +21,13 @@ then
   tmux send-keys "vim" C-m
 
   # Split pane 1 horizontal by 70%, start redis-server
-  tmux splitw -h -p 30
+  tmux splitw -h -l 30%
   # tmux send-keys "redis-server" C-m
 
   # Select pane 2
   # tmux selectp -t 2
   # Split pane 2 vertiacally by 50%
-  tmux splitw -v -p 50
+  tmux splitw -v -l 50%
 
   # select pane 3, set to api root
   # tmux selectp -t 3

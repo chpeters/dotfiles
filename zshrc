@@ -118,3 +118,10 @@ export PATH=$PATH:$HOME/bin
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 
 
+
+# bun completions
+[ -s "/Users/charlie/.bun/_bun" ] && source "/Users/charlie/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
