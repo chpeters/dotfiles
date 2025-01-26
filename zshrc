@@ -99,7 +99,7 @@ alias vimdiff='nvim -d'
 export EDITOR=nvim
 alias workspace=". makeWorkspace.sh"
 alias gg='gaa && gc && gp'
-alias ls='exa --classify'
+alias ls='eza --classify'
 alias cat="bat"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 # add support for ctrl+o to open selected file in VS Code

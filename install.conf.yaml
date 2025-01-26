@@ -18,6 +18,10 @@
 
     ~/.vimrc: vimrc
 
+    ~/.config/ghostty:
+        path: ghostty 
+        create: true
+
     ~/.config/nvim:
       path: nvim
       force: true

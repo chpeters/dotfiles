@@ -1,2 +1,4 @@
 **/node_modules
-
+coc/extensions/coc-json-data/**
+karabiner/automatic_backups/**
+.Ds_Store
