@@ -60,12 +60,7 @@ local plugins = {
       }
     end
   },
-  {
-    "itchyny/lightline.vim",
-    config = function()
-      vim.g.lightline = { colorscheme = "material_vim" }
-    end
-  },
+  
   {
     "neoclide/coc.nvim",
     branch = "release",
@@ -152,6 +147,53 @@ local plugins = {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "lua", "ruby", "vimdoc" },
+        auto_install = true,
+        highlight = { enable = true, },
+        textobjects = {
+          select = {
+            enable = true,
+            lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+            keymaps = {
+              ["af"] = "@function.outer",
+              ["if"] = "@function.inner",
+              ["ac"] = "@class.outer",
+              ["ic"] = "@class.inner",
+            },
+          },
+          move = {
+            enable = true,
+            set_jumps = true, -- whether to set jumps in the jumplist
+            goto_next_start = {
+              ["]m"] = "@function.outer",
+              ["]]"] = "@class.outer",
+            },
+            goto_next_end = {
+              ["]M"] = "@function.outer",
+              ["]["] = "@class.outer",
+            },
+            goto_previous_start = {
+              ["[m"] = "@function.outer",
+              ["[["] = "@class.outer",
+            },
+            goto_previous_end = {
+              ["[M"] = "@function.outer",
+              ["[]"] = "@class.outer",
+            },
+          },
+        },
+      })
+    end,
+    build = ":TSUpdate",
+  }, 
+
+  {
     "ibhagwan/fzf-lua",
     event = "VeryLazy",
     opts = { files = { previewer = "builtin" } },
@@ -169,18 +211,78 @@ local plugins = {
       vim.keymap.set("n", "<leader>o", ":NERDTreeToggle<CR>", { silent = true })
     end
   },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup({  numhl = true})
+    end
+  },
+
+  {
+    "davidmh/mdx.nvim",
+    config = true,
+    dependencies = {"nvim-treesitter/nvim-treesitter"}
+  },
+
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "mdx", "Avante", "codecompanion" },
+  },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("lualine").setup({
+        options = {
+          icons_enabled = true,
+          path = 1, -- show relative file path
+        }
+      })
+    end,
+  },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        sections = {
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 1 },
+          { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+          { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+          {
+            pane = 2,
+            icon = " ",
+            title = "Git Status",
+            section = "terminal",
+            enabled = function()
+              return Snacks.git.get_root() ~= nil
+            end,
+            cmd = "git status --short --branch --renames",
+            height = 5,
+            padding = 1,
+            ttl = 5 * 60,
+            indent = 3,
+          },
+          { section = "startup" },
+        },
+      }
+    }
+  },
+
   { "Xuyuanp/nerdtree-git-plugin" },
-  { "airblade/vim-gitgutter" },
   { "pangloss/vim-javascript" },
   { "amadeus/vim-jsx" },
-  { "jxnblk/vim-mdx-js" },
   { "leafgarland/typescript-vim" },
   { "peitalin/vim-jsx-typescript" },
   { "tommcdo/vim-exchange" },
   { "tpope/vim-commentary" },
   { "tpope/vim-surround" },
   { "christoomey/vim-tmux-navigator" },
-  { "mhinz/vim-startify" },
   {
     "alvan/vim-closetag",
     config = function()
@@ -286,6 +388,7 @@ vim.opt.textwidth = 500
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.wrap = true
+vim.opt.number = true
 
 ----------------------------------------------------------------
 -- Visual Mode searching
@@ -379,14 +482,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end
 })
-
-----------------------------------------------------------------
--- Status Line
-----------------------------------------------------------------
-
-vim.opt.laststatus = 2
-vim.opt.number = true
-vim.opt.statusline = "%{HasPaste()}%F%m%r%h %w  CWD: %r%{getcwd()}%h   Line: %l   Column: %c"
 
 ----------------------------------------------------------------
 -- Editing Mappings
