@@ -2,49 +2,24 @@
   "coc-json|global": {
     "json-schema-cache": {
       "http://json.schemastore.org/prettierrc": {
-        "etag": "\"079e10ba4ada1:0\"",
+        "etag": "W/\"69052263-348e\"",
         "fileName": "b2ed7a7b6c79e58baf94e4ce160282de.schema.json",
-        "updateTime": 1737215938393
+        "updateTime": 1762008457413
       },
       "https://json.schemastore.org/package.json": {
-        "etag": "\"80e33be4be62db1:0\"",
+        "etag": "W/\"69052263-ad0b\"",
         "fileName": "473f72b44c2905902dfbcc770aab7f7a.schema.json",
-        "updateTime": 1737215938496
-      },
-      "https://json.schemastore.org/semantic-release.json": {
-        "etag": "\"09e8ecc624ada1:0\"",
-        "fileName": "fbc95702ba6eddb3e2de4f52e31ca82a.schema.json",
-        "updateTime": 1737215938703
-      },
-      "https://json.schemastore.org/ava.json": {
-        "etag": "\"0d33f13698ada1:0\"",
-        "fileName": "635f57185b22bce9d3a56c68f5da4ad7.schema.json",
-        "updateTime": 1737215938712
-      },
-      "https://json.schemastore.org/jscpd.json": {
-        "etag": "\"06c7f331a12db1:0\"",
-        "fileName": "22bfc1ab1ff56aae62322f6ce45dab5a.schema.json",
-        "updateTime": 1737215938708
+        "updateTime": 1762008457599
       },
       "https://json.schemastore.org/prettierrc.json": {
-        "etag": "\"079e10ba4ada1:0\"",
+        "etag": "W/\"69052263-348e\"",
         "fileName": "ea5ab10330a3ab77dfd6d00a735b0925.schema.json",
-        "updateTime": 1737215938704
+        "updateTime": 1762008457996
       },
       "https://json.schemastore.org/npm-badges.json": {
         "etag": "\"80b7436b56edd81:0\"",
         "fileName": "3e3f4f64cc3028126c07d9b960ba9fe0.schema.json",
         "updateTime": 1667578094969
-      },
-      "https://json.schemastore.org/eslintrc.json": {
-        "etag": "\"805385dd39b8da1:0\"",
-        "fileName": "c5064f140d4cfdbf4d6fbe68f68abbb1.schema.json",
-        "updateTime": 1737215938709
-      },
-      "https://json.schemastore.org/stylelintrc.json": {
-        "etag": "\"8027545973adb1:0\"",
-        "fileName": "000bfbdd14d2fb8ec5b0d59bec32ef98.schema.json",
-        "updateTime": 1737215938713
       },
       "https://json.schemastore.org/project.json": {
         "etag": "\"80f260e8a414d91:0\"",
@@ -52,19 +27,64 @@
         "updateTime": 1686347351236
       },
       "https://json.schemastore.org/tsconfig.json": {
-        "etag": "\"804f7714b52bdb1:0\"",
+        "etag": "\"0b295b87093db1:0\"",
         "fileName": "a28507e42e8bfd5fba830538461d5db3.schema.json",
-        "updateTime": 1730765847027
+        "updateTime": 1745166183667
       },
       "https://json.schemastore.org/partial-eslint-plugins.json": {
-        "etag": "\"01dc33f55f4da1:0\"",
+        "etag": "W/\"69052263-72d5a\"",
         "fileName": "fc7bb6e733b774ce47be6006f0b75b87.schema.json",
-        "updateTime": 1737215938907
+        "updateTime": 1762008458164
       },
       "https://ui.shadcn.com/schema.json": {
-        "etag": "W/\"fb35a524f8b082013f915caa690c6648\"",
+        "etag": "W/\"8315067004c04ea6a8a0d1e11c9fc526\"",
         "fileName": "d99eec6fd7f2b46c72fe2cdaa964e70f.schema.json",
-        "updateTime": 1713631317564
+        "updateTime": 1762008895592
+      },
+      "https://json.schemastore.org/jscpd.json": {
+        "etag": "W/\"69052263-298b\"",
+        "fileName": "22bfc1ab1ff56aae62322f6ce45dab5a.schema.json",
+        "updateTime": 1762008457891
+      },
+      "https://json.schemastore.org/stylelintrc.json": {
+        "etag": "W/\"69052263-1c1fa\"",
+        "fileName": "000bfbdd14d2fb8ec5b0d59bec32ef98.schema.json",
+        "updateTime": 1762008457893
+      },
+      "https://json.schemastore.org/eslintrc.json": {
+        "etag": "W/\"69052263-d796\"",
+        "fileName": "c5064f140d4cfdbf4d6fbe68f68abbb1.schema.json",
+        "updateTime": 1762008457892
+      },
+      "https://json.schemastore.org/ava.json": {
+        "etag": "W/\"69052263-19f0\"",
+        "fileName": "635f57185b22bce9d3a56c68f5da4ad7.schema.json",
+        "updateTime": 1762008457883
+      },
+      "https://json.schemastore.org/semantic-release.json": {
+        "etag": "W/\"69052263-e26\"",
+        "fileName": "fbc95702ba6eddb3e2de4f52e31ca82a.schema.json",
+        "updateTime": 1762008457890
+      },
+      "https://biomejs.dev/schemas/2.0.0-beta.1/schema.json": {
+        "etag": "\"f95573a40fa8c10ccdcb31a7284a428a-ssl-df\"",
+        "fileName": "d5cfd6fd22172195acc8c7dc93a48462.schema.json",
+        "updateTime": 1762008905279
+      },
+      "https://openapi.vercel.sh/vercel.json": {
+        "etag": "W/\"bb5e02b7d3a71cbf63621e5a2d455228\"",
+        "fileName": "8fa0698bbd4a264448d9a01a17b58084.schema.json",
+        "updateTime": 1762008548872
+      },
+      "https://biomejs.dev/schemas/2.3.0/schema.json": {
+        "etag": "\"ee020f2f5eea5dbd1bcb6f7f0b91dae4-ssl-df\"",
+        "fileName": "b24bf379e1510624f5a464fef7d0f393.schema.json",
+        "updateTime": 1762008977127
+      },
+      "https://biomejs.dev/schemas/2.3.2/schema.json": {
+        "etag": "\"e08e593025efb319e19be451d3e17c06-ssl-df\"",
+        "fileName": "54f59d9619b87cd67902c2c47faceb5d.schema.json",
+        "updateTime": 1762009063938
       }
     }
   }

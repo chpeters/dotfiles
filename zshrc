@@ -125,3 +125,6 @@ export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/charlie/.antigravity/antigravity/bin:$PATH"

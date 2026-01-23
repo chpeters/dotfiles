@@ -3,30 +3,31 @@
       create: true
       relink: true
 
-- clean: ['~', '~/bin']
+- clean: ["~", "~/bin"]
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
 
 - link:
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
     ~/.ssh/config:
-        path: ssh/config
-        create: true
+      path: ssh/config
+      create: true
     ~/.tmux.conf: tmux.conf
 
     ~/.vimrc: vimrc
 
     ~/.config/ghostty:
-        path: ghostty 
-        create: true
+      path: ghostty
+      create: true
 
     ~/.config/nvim:
       path: nvim
       force: true
     ~/.config/coc: coc
     ~/.config/karabiner: karabiner
+    ~/.config/opencode: opencode
 
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
@@ -34,4 +35,3 @@
     ~/bin:
       path: scripts
       relink: true
-
