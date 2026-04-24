@@ -405,10 +405,6 @@ set_hl("rubyRegexp", cyan, nil, nil)
 set_hl("rubyRegexpDelimiter", violet, nil, nil)
 set_hl("rubyStringDelimiter", green, nil, nil)
 
--- Rust
-set_hl("CocRustTypeHint", invisibles, nil, nil)
-set_hl("CocRustChainingHint", invisibles, nil, nil)
-
 -- TeX
 set_hl("texBeginEndName", blue, nil, nil)
 set_hl("texMathMatcher", blue, nil, nil)
@@ -471,13 +467,6 @@ vim.cmd("hi link SignifySignDelete GitGutterDelete")
 if vim.fn.has("nvim") == 1 then
   set_hl("NERDTreeFile", fg, nil, nil)
 end
-
--- coc.nvim
-set_hl("CocMarkdownLink", purple, nil, nil)
-set_hl("CocErrorSign", red, nil, nil)
-set_hl("CocWarningSign", orange, nil, nil)
-set_hl("CocHintSign", yellow, nil, nil)
-set_hl("CocInfoSign", green, nil, nil)
 
 -- Neovim terminal and Tree-sitter
 if vim.fn.has("nvim") == 1 then

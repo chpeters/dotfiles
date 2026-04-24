@@ -23,7 +23,7 @@ local function on_lsp_attach(event)
     vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, silent = true, desc = desc })
   end
 
-  -- Diagnostics prev/next (CoC had [g / ]g).
+  -- Diagnostics prev/next.
   bufmap("n", "[g", vim.diagnostic.goto_prev, "Prev diagnostic")
   bufmap("n", "]g", vim.diagnostic.goto_next, "Next diagnostic")
 
