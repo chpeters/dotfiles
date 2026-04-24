@@ -610,10 +610,10 @@ end
 
 
 -- md render.nvim
-set_hl("RenderMarkdownCode", cyan, nil, nil)
-set_hl("RenderMarkdownCodeInfo", cyan, nil, "italic")
-set_hl("RenderMarkdownCodeBorder", cyan, nil, nil)
-set_hl("RenderMarkdownCodeFallback", cyan, nil, nil)
+set_hl("RenderMarkdownCode", nil, line_highlight, nil)
+set_hl("RenderMarkdownCodeInfo", cyan, line_highlight, "italic")
+set_hl("RenderMarkdownCodeBorder", cyan, line_highlight, nil)
+set_hl("RenderMarkdownCodeFallback", cyan, line_highlight, nil)
 
 -- Inline code: subtle pill
 -- If you want it to pop more, swap fg->paleblue or cyan

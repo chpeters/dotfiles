@@ -1,53 +1,100 @@
-return {
-  "obsidian-nvim/obsidian.nvim",
-  version = "*",
-  ft = { "markdown" },
-  cmd = { "Obsidian" },
-  ---@module 'obsidian'
-  ---@type obsidian.config
-  opts = {
-    legacy_commands = false,
-    workspaces = {
-      {
-        name = "notes",
-        path = "~/Notes/notes",
-      },
-      {
-        name = "writing",
-        path = "~/Notes/writing",
-      },
-      {
-        name = "goals",
-        path = "~/Notes/goals",
-      },
+local M = {}
 
+local opts = {
+  legacy_commands = false,
+  workspaces = {
+    {
+      name = "notes",
+      path = "~/Notes/notes",
     },
-    daily_notes = {
-      folder = "daily",
-      date_format = nil,
-      alias_format = nil,
-      default_tags = { "daily-notes" },
-      workdays_only = false,
+    {
+      name = "writing",
+      path = "~/Notes/writing",
     },
-    note_id_func = function(base_id, _path)
-      -- base_id is what the command passed as `id` (after trimming) OR what :ObsidianNew passes as title.
-      if base_id and base_id ~= "" then
-        local s = tostring(base_id)
+    {
+      name = "goals",
+      path = "~/Notes/goals",
+    },
+  },
+  daily_notes = {
+    folder = "daily",
+    date_format = nil,
+    alias_format = nil,
+    default_tags = { "daily-notes" },
+    workdays_only = false,
+  },
+  note_id_func = function(base_id, _path)
+    if base_id and base_id ~= "" then
+      local s = tostring(base_id)
 
-        -- If someone pastes a path, parse_as_path already peeled dirs off before calling note_id_func,
-        -- but this makes it robust anyway.
-        s = s:gsub("\\", "/"):match("([^/]+)$") or s
+      s = s:gsub("\\", "/"):match("([^/]+)$") or s
+      s = s:gsub("%.[mM][dD]$", "")
+      s = vim.trim(s)
+      s = s:gsub("%s+", "-")
+      if s ~= "" then
+        return s
+      end
+    end
+  end,
+}
 
-        -- generate_id() strips ".md" too, but do it here to keep behavior obvious.
-        s = s:gsub("%.[mM][dD]$", "")
+local function setup_obsidian()
+  require("obsidian").setup(opts)
 
-        -- Avoid accidental empty names
-        s = vim.trim(s)
-        s = s:gsub("%s+", "-")
-        if s ~= "" then
-          return s
+  local function enter_current_buffer(buf)
+    if not vim.api.nvim_buf_is_valid(buf) then
+      return
+    end
+
+    local ft = vim.bo[buf].filetype
+    if ft ~= "markdown" and ft ~= "quarto" then
+      return
+    end
+
+    vim.api.nvim_buf_call(buf, function()
+      vim.api.nvim_exec_autocmds("BufEnter", {
+        buffer = buf,
+        group = "obsidian_setup",
+        modeline = false,
+      })
+    end)
+  end
+
+  vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("obsidian_current_buffer", { clear = true }),
+    pattern = { "markdown", "quarto" },
+    callback = function(args)
+      vim.schedule(function()
+        enter_current_buffer(args.buf)
+      end)
+    end,
+  })
+
+  vim.schedule(function()
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.api.nvim_buf_is_valid(buf) then
+        local ft = vim.bo[buf].filetype
+        if ft == "markdown" or ft == "quarto" then
+          vim.api.nvim_buf_call(buf, function()
+            vim.api.nvim_exec_autocmds("FileType", {
+              group = "obsidian_setup",
+              pattern = ft,
+              modeline = false,
+            })
+          end)
+          enter_current_buffer(buf)
         end
       end
     end
-  },
-}
+  end)
+end
+
+function M.setup(pack)
+  pack.start({
+    { src = pack.gh("obsidian-nvim/obsidian.nvim"), name = "obsidian.nvim" },
+  })
+
+  setup_obsidian()
+end
+
+return M

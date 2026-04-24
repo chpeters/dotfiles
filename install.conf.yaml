@@ -25,7 +25,6 @@
     ~/.config/nvim:
       path: nvim
       force: true
-    ~/.config/coc: coc
     ~/.config/karabiner: karabiner
     ~/.config/opencode: opencode
 

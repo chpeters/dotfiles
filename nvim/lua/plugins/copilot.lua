@@ -1,28 +1,54 @@
-return {
-  "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    build = ":Copilot auth",
-    event = "InsertEnter",
-    config = function()
-      local copilot = require("copilot")
-      local suggestion = require("copilot.suggestion")
+local M = {}
 
-      copilot.setup({
-        suggestion = {
-          auto_trigger = true,
-          keymap = {
-            accept = false,
-          },
-        },
-      })
+function M.setup(pack)
+  local configured = false
 
-      vim.keymap.set("i", "<Tab>", function()
-        if suggestion.is_visible() then
-          suggestion.accept()
-          return ""  -- Return empty so nothing extra is inserted.
-        else
-          return "\t"  -- Otherwise, insert a tab.
-        end
-      end, { expr = true, silent = true })
+  local function ensure_copilot()
+    if configured then
+      return
     end
-  }
+
+    configured = true
+    pack.load("copilot.lua")
+
+    local copilot = require("copilot")
+    local suggestion = require("copilot.suggestion")
+
+    copilot.setup({
+      suggestion = {
+        auto_trigger = true,
+        keymap = {
+          accept = false,
+        },
+      },
+    })
+
+    vim.keymap.set("i", "<Tab>", function()
+      if suggestion.is_visible() then
+        suggestion.accept()
+        return ""
+      end
+
+      return "\t"
+    end, { expr = true, silent = true })
+  end
+
+  pack.defer({
+    { src = pack.gh("zbirenbaum/copilot.lua"), name = "copilot.lua" },
+  })
+
+  pack.once_on_events("InsertEnter", function()
+    ensure_copilot()
+  end)
+
+  pack.proxy_command("Copilot", {
+    nargs = "*",
+    bang = true,
+    desc = "Copilot",
+  }, function(ctx)
+    ensure_copilot()
+    vim.cmd(pack.command_line(ctx))
+  end)
+end
+
+return M
