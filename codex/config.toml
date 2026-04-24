@@ -1,0 +1,60 @@
+personality = "pragmatic"
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
+
+notify = ["/Users/charlie/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
+[projects."/Users/charlie/Dev/chpeters.me"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/.dotfiles"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/Codex/2026-04-19-computer-use-plugin-computer-use-openai"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Notes"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/Codex/2026-04-20-use-gmail-plugin-gmail-openai-curated"]
+trust_level = "trusted"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-04-23T18:22:30Z"
+source_type = "local"
+source = "/Users/charlie/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-04-23T19:20:32Z"
+source_type = "local"
+source = "/Users/charlie/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."expo@openai-curated"]
+enabled = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[features]
+memories = true
+
+[memories]
+no_memories_if_mcp_or_web_search = false

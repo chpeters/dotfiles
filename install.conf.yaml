@@ -21,6 +21,7 @@
     ~/.config/ghostty:
       path: ghostty
       create: true
+      if: '[ ! -e ~/.config/ghostty ]'
 
     ~/.config/nvim:
       path: nvim
@@ -34,3 +35,33 @@
     ~/bin:
       path: scripts
       relink: true
+
+    ~/.codex/AGENTS.md:
+      path: codex/AGENTS.md
+      if: '[ ! -e ~/.codex/AGENTS.md ] || [ -L ~/.codex/AGENTS.md ]'
+    ~/.codex/config.toml:
+      path: codex/config.toml
+      if: '[ ! -e ~/.codex/config.toml ] || [ -L ~/.codex/config.toml ]'
+    ~/.codex/agents:
+      path: codex/agents
+      if: '[ ! -e ~/.codex/agents ] || [ -L ~/.codex/agents ]'
+
+    ~/.claude/CLAUDE.md:
+      path: claude/CLAUDE.md
+      if: '[ ! -e ~/.claude/CLAUDE.md ] || [ -L ~/.claude/CLAUDE.md ]'
+    ~/.claude/settings.json:
+      path: claude/settings.json
+      if: '[ ! -e ~/.claude/settings.json ] || [ -L ~/.claude/settings.json ]'
+    ~/.claude/rules:
+      path: claude/rules
+      if: '[ ! -e ~/.claude/rules ] || [ -L ~/.claude/rules ]'
+    ~/.claude/agents:
+      path: claude/agents
+      if: '[ ! -e ~/.claude/agents ] || [ -L ~/.claude/agents ]'
+    ~/.claude/skills:
+      path: claude/skills
+      if: '[ ! -e ~/.claude/skills ] || [ -L ~/.claude/skills ]'
+
+    ~/.agents/skills:
+      path: agents/skills
+      if: '[ ! -e ~/.agents/skills ] || [ -L ~/.agents/skills ]'
