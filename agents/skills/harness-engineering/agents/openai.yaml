@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness Engineering"
+  short_description: "Add lightweight repo harness guidance"
+  default_prompt: "Use $harness-engineering to add or maintain lightweight harness engineering in this repository."
