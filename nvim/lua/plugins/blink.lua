@@ -38,12 +38,13 @@ function M.setup(pack)
   pack.defer({
     { src = pack.gh("rafamadriz/friendly-snippets"), name = "friendly-snippets" },
     { src = pack.gh("L3MON4D3/LuaSnip"), name = "LuaSnip" },
-    { src = pack.gh("saghen/blink.cmp"), name = "blink.cmp", version = vim.version.range("1") },
+    {
+      src = pack.gh("saghen/blink.cmp"),
+      name = "blink.cmp",
+      version = vim.version.range("1"),
+      data = { event = { "InsertEnter", "CmdlineEnter" }, config = ensure_blink },
+    },
   })
-
-  pack.once_on_events({ "InsertEnter", "CmdlineEnter" }, function()
-    ensure_blink()
-  end)
 end
 
 return M

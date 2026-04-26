@@ -1,0 +1,4 @@
+interface:
+  display_name: "Podcasts"
+  short_description: "Manage chpeters.me podcast feed"
+  default_prompt: "Use $podcasts to add, update, or remove an episode from the chpeters.me podcast feed."

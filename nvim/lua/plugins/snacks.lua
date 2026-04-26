@@ -316,9 +316,7 @@ function M.setup(pack)
   vim.o.statuscolumn = ""
   set_keymaps(snacks, pack)
 
-  pack.once_on_user("PackDeferred", function()
-    setup_deferred(snacks)
-  end)
+  vim.api.nvim_create_autocmd("User", { pattern = "PackDeferred", once = true, callback = function() setup_deferred(snacks) end })
 end
 
 return M

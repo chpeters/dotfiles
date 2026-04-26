@@ -61,12 +61,12 @@ function M.setup(pack)
   end
 
   pack.defer({
-    { src = pack.gh("stevearc/conform.nvim"), name = "conform.nvim" },
+    {
+      src = pack.gh("stevearc/conform.nvim"),
+      name = "conform.nvim",
+      data = { event = { "BufReadPost", "BufNewFile" }, replay = is_file_buffer, config = ensure_conform },
+    },
   })
-
-  pack.once_on_events_with_replay({ "BufReadPost", "BufNewFile" }, is_file_buffer, function()
-    ensure_conform()
-  end)
 
   vim.api.nvim_create_autocmd("BufWritePre", {
     group = vim.api.nvim_create_augroup("conform_format", { clear = true }),

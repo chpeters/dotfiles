@@ -34,12 +34,8 @@ function M.setup(pack)
   end
 
   pack.defer({
-    { src = pack.gh("zbirenbaum/copilot.lua"), name = "copilot.lua" },
+    { src = pack.gh("zbirenbaum/copilot.lua"), name = "copilot.lua", data = { event = "InsertEnter", config = ensure_copilot } },
   })
-
-  pack.once_on_events("InsertEnter", function()
-    ensure_copilot()
-  end)
 
   pack.proxy_command("Copilot", {
     nargs = "*",

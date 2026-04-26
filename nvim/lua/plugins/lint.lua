@@ -79,15 +79,21 @@ function M.setup(pack)
   end
 
   pack.defer({
-    { src = pack.gh("mfussenegger/nvim-lint"), name = "nvim-lint" },
+    {
+      src = pack.gh("mfussenegger/nvim-lint"),
+      name = "nvim-lint",
+      data = {
+        event = { "BufReadPost", "BufNewFile" },
+        replay = is_file_buffer,
+        config = function(event)
+          local run_lint = ensure_lint()
+          if event.buf and vim.api.nvim_buf_is_valid(event.buf) then
+            vim.api.nvim_buf_call(event.buf, run_lint)
+          end
+        end,
+      },
+    },
   })
-
-  pack.once_on_events_with_replay({ "BufReadPost", "BufNewFile" }, is_file_buffer, function(event)
-    local run_lint = ensure_lint()
-    if event.buf and vim.api.nvim_buf_is_valid(event.buf) then
-      vim.api.nvim_buf_call(event.buf, run_lint)
-    end
-  end)
 end
 
 return M

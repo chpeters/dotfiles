@@ -34,12 +34,17 @@ function M.setup(pack)
   end
 
   pack.defer({
-    { src = pack.gh("MeanderingProgrammer/render-markdown.nvim"), name = "render-markdown.nvim" },
+    {
+      src = pack.gh("MeanderingProgrammer/render-markdown.nvim"),
+      name = "render-markdown.nvim",
+      data = {
+        event = "FileType",
+        pattern = filetypes,
+        replay = function(bufnr) return vim.list_contains(filetypes, vim.bo[bufnr].filetype) end,
+        config = ensure_markdown,
+      },
+    },
   })
-
-  pack.once_on_filetypes_with_replay(filetypes, function()
-    ensure_markdown()
-  end)
 end
 
 return M

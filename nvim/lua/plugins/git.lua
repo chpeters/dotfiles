@@ -19,14 +19,12 @@ function M.setup(pack)
   end
 
   pack.defer({
-    { src = pack.gh("lewis6991/gitsigns.nvim"), name = "gitsigns.nvim" },
+    {
+      src = pack.gh("lewis6991/gitsigns.nvim"),
+      name = "gitsigns.nvim",
+      data = { event = { "BufReadPost", "BufNewFile" }, replay = function(bufnr) return vim.bo[bufnr].buftype == "" and vim.api.nvim_buf_get_name(bufnr) ~= "" end, config = ensure_gitsigns },
+    },
   })
-
-  pack.once_on_events_with_replay({ "BufReadPost", "BufNewFile" }, function(bufnr)
-    return vim.bo[bufnr].buftype == "" and vim.api.nvim_buf_get_name(bufnr) ~= ""
-  end, function()
-    ensure_gitsigns()
-  end)
 end
 
 return M

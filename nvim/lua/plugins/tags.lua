@@ -22,14 +22,12 @@ function M.setup(pack)
   end
 
   pack.defer({
-    { src = pack.gh("windwp/nvim-ts-autotag"), name = "nvim-ts-autotag" },
+    {
+      src = pack.gh("windwp/nvim-ts-autotag"),
+      name = "nvim-ts-autotag",
+      data = { event = { "BufReadPre", "BufNewFile" }, replay = function(bufnr) return vim.bo[bufnr].buftype == "" and vim.api.nvim_buf_get_name(bufnr) ~= "" end, config = ensure_autotag },
+    },
   })
-
-  pack.once_on_events_with_replay({ "BufReadPre", "BufNewFile" }, function(bufnr)
-    return vim.bo[bufnr].buftype == "" and vim.api.nvim_buf_get_name(bufnr) ~= ""
-  end, function()
-    ensure_autotag()
-  end)
 end
 
 return M

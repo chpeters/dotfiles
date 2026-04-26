@@ -1,8 +1,12 @@
-personality = "pragmatic"
+personality = "friendly"
 model = "gpt-5.5"
 model_reasoning_effort = "xhigh"
 
 notify = ["/Users/charlie/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+sandbox_mode = "workspace-write"
+
+[mcp_servers.grep]
+url = "https://mcp.grep.app"
 
 [projects."/Users/charlie/Dev/chpeters.me"]
 trust_level = "trusted"
@@ -19,8 +23,29 @@ trust_level = "trusted"
 [projects."/Users/charlie/Documents/Codex/2026-04-20-use-gmail-plugin-gmail-openai-curated"]
 trust_level = "trusted"
 
+[projects."/Users/charlie/Documents/Codex/2026-04-23/computer-use-plugin-computer-use-openai"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/Codex/2026-04-25/create-a-plan-to-migrate-my"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/Codex/2026-04-25/https-brandur-org-newsletter-nanoglyph-is"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/Codex/2026-04-25/https-github-com-yt-dlp-yt"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/New project"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Dev/finance"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/Codex/2026-04-25/i-want-you-to-quiz-me"]
+trust_level = "trusted"
+
 [marketplaces.openai-bundled]
-last_updated = "2026-04-23T18:22:30Z"
+last_updated = "2026-04-26T00:13:57Z"
 source_type = "local"
 source = "/Users/charlie/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -53,8 +78,17 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
+[plugins."notion@openai-curated"]
+enabled = true
+
+[plugins."vercel@openai-curated"]
+enabled = true
+
 [features]
 memories = true
 
 [memories]
 no_memories_if_mcp_or_web_search = false
+
+[sandbox_workspace_write]
+network_access = true

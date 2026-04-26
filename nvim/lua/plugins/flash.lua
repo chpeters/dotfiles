@@ -30,12 +30,8 @@ function M.setup(pack)
   end
 
   pack.defer({
-    { src = pack.gh("folke/flash.nvim"), name = "flash.nvim" },
+    { src = pack.gh("folke/flash.nvim"), name = "flash.nvim", data = { event = "User", pattern = "PackDeferred", config = ensure_flash } },
   })
-
-  pack.once_on_user("PackDeferred", function()
-    ensure_flash()
-  end)
 end
 
 return M

@@ -169,12 +169,7 @@ function M.setup(pack)
 
   vim.g.no_plugin_maps = true
 
-  pack.on_change("nvim-treesitter", function(event)
-    local kind = event.data.kind
-    if kind ~= "install" and kind ~= "update" then
-      return
-    end
-
+  local function build_treesitter(event)
     local function run_sync()
       if not event.data.active then
         pack.load("nvim-treesitter")
@@ -188,10 +183,15 @@ function M.setup(pack)
     else
       vim.schedule(run_sync)
     end
-  end)
+  end
 
   pack.start({
-    { src = pack.gh("nvim-treesitter/nvim-treesitter"), name = "nvim-treesitter", version = "main" },
+    {
+      src = pack.gh("nvim-treesitter/nvim-treesitter"),
+      name = "nvim-treesitter",
+      version = "main",
+      data = { build = build_treesitter },
+    },
     {
       src = pack.gh("nvim-treesitter/nvim-treesitter-textobjects"),
       name = "nvim-treesitter-textobjects",
