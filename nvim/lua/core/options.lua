@@ -34,7 +34,7 @@ vim.opt.errorbells = false
 vim.opt.visualbell = false
 vim.opt.tm = 500
 vim.opt.foldcolumn = "1"
-vim.opt.conceallevel = 2
+vim.opt.conceallevel = 0
 
 ----------------------------------------------------------------
 -- Colors and Fonts
@@ -42,6 +42,7 @@ vim.opt.conceallevel = 2
 
 vim.cmd([[syntax enable]])
 vim.opt.termguicolors = true
+vim.g.material_terminal_italics = 1
 vim.cmd([[colorscheme material]])
 vim.opt.guifont = "HasklugNerdFontMono:h18"
 vim.opt.background = "dark"

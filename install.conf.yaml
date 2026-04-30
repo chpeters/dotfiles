@@ -14,7 +14,6 @@
     ~/.ssh/config:
       path: ssh/config
       create: true
-    ~/.tmux.conf: tmux.conf
 
     ~/.vimrc: vimrc
 
@@ -26,11 +25,41 @@
     ~/.config/nvim:
       path: nvim
       force: true
+    ~/.config/fish/config.fish:
+      path: fish/config.fish
+      if: '[ ! -e ~/.config/fish/config.fish ] || [ -L ~/.config/fish/config.fish ]'
+    ~/.config/fish/conf.d/00-env.fish:
+      path: fish/conf.d/00-env.fish
+      if: '[ ! -e ~/.config/fish/conf.d/00-env.fish ] || [ -L ~/.config/fish/conf.d/00-env.fish ]'
+    ~/.config/fish/functions/workspace.fish:
+      path: fish/functions/workspace.fish
+      if: '[ ! -e ~/.config/fish/functions/workspace.fish ] || [ -L ~/.config/fish/functions/workspace.fish ]'
+    ~/.config/fish/functions/gg.fish:
+      path: fish/functions/gg.fish
+      if: '[ ! -e ~/.config/fish/functions/gg.fish ] || [ -L ~/.config/fish/functions/gg.fish ]'
+    ~/.config/fish/functions/ls.fish:
+      path: fish/functions/ls.fish
+      if: '[ ! -e ~/.config/fish/functions/ls.fish ] || [ -L ~/.config/fish/functions/ls.fish ]'
+    ~/.config/fish/functions/cat.fish:
+      path: fish/functions/cat.fish
+      if: '[ ! -e ~/.config/fish/functions/cat.fish ] || [ -L ~/.config/fish/functions/cat.fish ]'
+    ~/.config/fish/functions/zkill.fish:
+      path: fish/functions/zkill.fish
+      if: '[ ! -e ~/.config/fish/functions/zkill.fish ] || [ -L ~/.config/fish/functions/zkill.fish ]'
+    ~/.config/fish/fish_plugins:
+      path: fish/fish_plugins
+      if: '[ ! -e ~/.config/fish/fish_plugins ] || [ -L ~/.config/fish/fish_plugins ]'
+    ~/.config/starship.toml:
+      path: starship.toml
+      if: '[ ! -e ~/.config/starship.toml ] || [ -L ~/.config/starship.toml ]'
+    ~/.config/zellij/config.kdl:
+      path: zellij/config.kdl
+      if: '[ ! -e ~/.config/zellij/config.kdl ] || [ -L ~/.config/zellij/config.kdl ]'
+    ~/.config/zellij/layouts/work.kdl:
+      path: zellij/layouts/work.kdl
+      if: '[ ! -e ~/.config/zellij/layouts/work.kdl ] || [ -L ~/.config/zellij/layouts/work.kdl ]'
     ~/.config/karabiner: karabiner
     ~/.config/opencode: opencode
-
-    ~/.zprofile: zprofile
-    ~/.zshrc: zshrc
 
     ~/bin:
       path: scripts

@@ -1,0 +1,11 @@
+layout {
+    tab name="work" {
+        pane split_direction="vertical" {
+            pane command="nvim" size="70%" focus=true start_suspended=false
+            pane split_direction="horizontal" size="30%" {
+                pane
+                pane
+            }
+        }
+    }
+}

@@ -4,7 +4,17 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- copy to clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", "\"+y", { desc = "Yank into \" register" })
+vim.keymap.set({ "n", "x" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank line to clipboard" })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+  pattern = "*",
+  desc = "Highlight selection on yank",
+  callback = function()
+    vim.highlight.on_yank({ timeout = 200, visual = true })
+  end,
+})
 
 -- Fast saving
 vim.keymap.set("n", "<leader>w", ":w!<CR>", { silent = true })
@@ -97,6 +107,5 @@ vim.api.nvim_create_autocmd("VimResized", {
     vim.cmd("wincmd =")
   end
 })
-
 
 

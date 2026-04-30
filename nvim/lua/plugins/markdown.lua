@@ -7,6 +7,8 @@ local opts = {
     },
   },
   code = {
+    border = "thick",
+    conceal_delimiters = false,
     highlight = "RenderMarkdownCode",
     highlight_info = "RenderMarkdownCodeInfo",
     highlight_language = nil,
@@ -14,8 +16,50 @@ local opts = {
     highlight_fallback = "RenderMarkdownCodeFallback",
     highlight_inline = "RenderMarkdownCodeInline",
   },
+  heading = {
+    enabled = false,
+  },
+  win_options = {
+    conceallevel = {
+      default = 0,
+      rendered = 0,
+    },
+  },
   bullet = {
-    right_pad = 1,
+    enabled = false,
+  },
+  checkbox = {
+    enabled = false,
+  },
+  dash = {
+    enabled = false,
+  },
+  document = {
+    enabled = false,
+  },
+  html = {
+    enabled = false,
+  },
+  indent = {
+    enabled = false,
+  },
+  inline_highlight = {
+    enabled = false,
+  },
+  latex = {
+    enabled = false,
+  },
+  link = {
+    enabled = false,
+  },
+  paragraph = {
+    enabled = false,
+  },
+  pipe_table = {
+    enabled = false,
+  },
+  quote = {
+    enabled = false,
   },
 }
 
@@ -29,6 +73,7 @@ function M.setup(pack)
     end
 
     configured = true
+    vim.g.render_markdown_config = opts
     pack.load("render-markdown.nvim")
     require("render-markdown").setup(opts)
   end

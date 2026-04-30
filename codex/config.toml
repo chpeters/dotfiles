@@ -52,12 +52,12 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-04-26T00:13:57Z"
+last_updated = "2026-04-30T13:27:21Z"
 source_type = "local"
 source = "/Users/charlie/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-04-23T19:20:32Z"
+last_updated = "2026-04-27T23:19:45Z"
 source_type = "local"
 source = "/Users/charlie/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -99,3 +99,6 @@ no_memories_if_mcp_or_web_search = false
 
 [sandbox_workspace_write]
 network_access = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 1
