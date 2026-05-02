@@ -2,8 +2,9 @@ personality = "friendly"
 model = "gpt-5.5"
 model_reasoning_effort = "xhigh"
 
-notify = ["/Users/charlie/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 sandbox_mode = "workspace-write"
+
+notify = ["/Users/charlie/.codex/plugins/cache/openai-bundled/computer-use/1.0.770/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [agents]
 max_threads = 10
@@ -51,13 +52,28 @@ trust_level = "trusted"
 [projects."/Users/charlie/Dev/orchestrator"]
 trust_level = "trusted"
 
+[projects."/Users/charlie/Dev/codex-annotations.nvim"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/Codex/2026-04-30/use-google-chrome-plugin-computer-use"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Dev/annotator.nvim"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/Codex/2026-04-30/open-htis-up-in-this-browser"]
+trust_level = "trusted"
+
+[projects."/Users/charlie/Documents/Codex/2026-05-02/use-google-chrome-plugin-computer-use"]
+trust_level = "trusted"
+
 [marketplaces.openai-bundled]
-last_updated = "2026-04-30T13:27:21Z"
+last_updated = "2026-05-01T19:20:25Z"
 source_type = "local"
 source = "/Users/charlie/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-04-27T23:19:45Z"
+last_updated = "2026-04-30T19:26:00Z"
 source_type = "local"
 source = "/Users/charlie/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -73,9 +89,6 @@ enabled = true
 [plugins."github@openai-curated"]
 enabled = true
 
-[plugins."browser-use@openai-bundled"]
-enabled = true
-
 [plugins."documents@openai-primary-runtime"]
 enabled = true
 
@@ -89,6 +102,9 @@ enabled = true
 enabled = true
 
 [plugins."vercel@openai-curated"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
 enabled = true
 
 [features]

@@ -4,6 +4,10 @@
       "rev": "a62e1083a3cfe8b6b206e7d3d33a51091df25357",
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
+    "annotator.nvim": {
+      "rev": "c1c84b462b611e304d915c837c75d937cae802e6",
+      "src": "https://github.com/chpeters/annotator.nvim"
+    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",
@@ -36,6 +40,10 @@
     "mdx.nvim": {
       "rev": "6c3dc7c4a4b58b5d86404c21a9b4655282ca08c5",
       "src": "https://github.com/davidmh/mdx.nvim"
+    },
+    "mini.diff": {
+      "rev": "0ee0459152b141c0e1b0931eb6949105be4850a9",
+      "src": "https://github.com/nvim-mini/mini.diff"
     },
     "mini.icons": {
       "rev": "bac6317300e205335df425296570d84322730067",
