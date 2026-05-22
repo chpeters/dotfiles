@@ -61,6 +61,16 @@ Use `docs/architecture.md`, not `docs/architecture.md.md`.
 7. Record validation honestly. If a command is missing or cannot run, say so in the plan or final summary.
 8. At the end, summarize what was added, what was intentionally skipped, and any future harness improvements worth considering.
 
+## Effect Reference Sources
+
+If the repository uses Effect, add or recommend a gitignored `references/effect` checkout as agent-only context when the repo does not already have an equivalent reference-source pattern.
+
+- Prefer the repo's existing reference convention if one exists.
+- If no convention exists and the user asked for harness improvements, pull the Effect source into `references/effect` when network access is available.
+- Ensure `references/` or `references/effect` is ignored by git.
+- Document in `AGENTS.md` that agents should inspect `references/effect` before changing Effect APIs, services, layers, schemas, tests, or runtime patterns.
+- Do not make builds, tests, or application code depend on `references/`.
+
 ## Reference Scaffolds
 
 Load only the specific scaffold you need:

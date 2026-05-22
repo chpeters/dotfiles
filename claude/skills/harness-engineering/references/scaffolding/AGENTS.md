@@ -21,6 +21,12 @@ A plan should explain the goal, context, work sequence, validation, risks, progr
 
 Use the repository's existing test, lint, typecheck, build, or run commands. Do not invent scripts unless explicitly requested. If a command is missing or cannot run, record that clearly in the plan or final summary.
 
+## Current docs and source
+
+Prefer repo-local docs and source over memory for fast-moving dependencies. If this repo uses Effect, use a gitignored `references/effect` checkout as agent-only context and inspect it before changing Effect APIs, services, layers, schemas, tests, or runtime patterns. If the checkout is missing, populate it or read the installed package source/docs before making the change.
+
+Normal builds, tests, and application code must not depend on `references/`.
+
 ## Documentation
 
 When architecture, quality expectations, testing approach, setup assumptions, or user-visible behavior changes, update the matching document under `docs/`.
