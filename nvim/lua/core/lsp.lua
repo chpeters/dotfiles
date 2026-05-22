@@ -8,6 +8,7 @@ local SERVERS = {
   "mdx_analyzer",
   "ty",
   "tsgo",
+  "oxlint",
   "tailwindcss",
 }
 

@@ -4,7 +4,7 @@ model_reasoning_effort = "xhigh"
 
 sandbox_mode = "workspace-write"
 
-notify = ["/Users/charlie/.codex/plugins/cache/openai-bundled/computer-use/1.0.770/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+notify = ["/Users/charlie/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [agents]
 max_threads = 10
@@ -13,40 +13,34 @@ job_max_runtime_seconds = 3600
 [mcp_servers.grep]
 url = "https://mcp.grep.app"
 
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/Codex.app/Contents/Resources/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_MARKETPLACE_NAME = "openai-bundled"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+CODEX_HOME = "/Users/charlie/.codex"
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = ""
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/node"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "167fdf579477181fba1773c1efb067b00c5a64fe85dafb50a2001bde198dc739"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/charlie/.codex"
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "BROWSER_USE_MARKETPLACE_NAME"
+SKY_CUA_SERVICE_PATH = "/Users/charlie/.codex/.tmp/bundled-marketplaces/openai-bundled/plugins/computer-use/Codex Computer Use.app"
+
 [projects."/Users/charlie/Dev/chpeters.me"]
 trust_level = "trusted"
 
 [projects."/Users/charlie/.dotfiles"]
 trust_level = "trusted"
 
-[projects."/Users/charlie/Documents/Codex/2026-04-19-computer-use-plugin-computer-use-openai"]
-trust_level = "trusted"
-
 [projects."/Users/charlie/Notes"]
 trust_level = "trusted"
 
-[projects."/Users/charlie/Documents/Codex/2026-04-20-use-gmail-plugin-gmail-openai-curated"]
-trust_level = "trusted"
-
-[projects."/Users/charlie/Documents/Codex/2026-04-23/computer-use-plugin-computer-use-openai"]
-trust_level = "trusted"
-
-[projects."/Users/charlie/Documents/Codex/2026-04-25/create-a-plan-to-migrate-my"]
-trust_level = "trusted"
-
-[projects."/Users/charlie/Documents/Codex/2026-04-25/https-brandur-org-newsletter-nanoglyph-is"]
-trust_level = "trusted"
-
-[projects."/Users/charlie/Documents/Codex/2026-04-25/https-github-com-yt-dlp-yt"]
-trust_level = "trusted"
-
-[projects."/Users/charlie/Documents/New project"]
-trust_level = "trusted"
-
 [projects."/Users/charlie/Dev/finance"]
-trust_level = "trusted"
-
-[projects."/Users/charlie/Documents/Codex/2026-04-25/i-want-you-to-quiz-me"]
 trust_level = "trusted"
 
 [projects."/Users/charlie/Dev/orchestrator"]
@@ -55,25 +49,19 @@ trust_level = "trusted"
 [projects."/Users/charlie/Dev/codex-annotations.nvim"]
 trust_level = "trusted"
 
-[projects."/Users/charlie/Documents/Codex/2026-04-30/use-google-chrome-plugin-computer-use"]
-trust_level = "trusted"
-
 [projects."/Users/charlie/Dev/annotator.nvim"]
 trust_level = "trusted"
 
-[projects."/Users/charlie/Documents/Codex/2026-04-30/open-htis-up-in-this-browser"]
-trust_level = "trusted"
-
-[projects."/Users/charlie/Documents/Codex/2026-05-02/use-google-chrome-plugin-computer-use"]
+[projects."/Users/charlie/Dev/usetoller"]
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-05-01T19:20:25Z"
+last_updated = "2026-05-22T12:57:31Z"
 source_type = "local"
 source = "/Users/charlie/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-04-30T19:26:00Z"
+last_updated = "2026-05-22T01:19:40Z"
 source_type = "local"
 source = "/Users/charlie/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -104,11 +92,16 @@ enabled = true
 [plugins."vercel@openai-curated"]
 enabled = true
 
-[plugins."browser-use@openai-bundled"]
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
 enabled = true
 
 [features]
 memories = true
+goals = true
+js_repl = false
 
 [memories]
 no_memories_if_mcp_or_web_search = false
@@ -118,3 +111,36 @@ network_access = true
 
 [tui.model_availability_nux]
 "gpt-5.5" = 1
+
+[desktop]
+appearanceTheme = "light"
+appearanceLightCodeThemeId = "solarized"
+sansFontSize = 16
+codeFontSize = 14
+usePointerCursors = true
+preventSleepWhileRunning = true
+keepRemoteControlAwakeWhilePluggedIn = true
+git-branch-prefix = ""
+git-pull-request-merge-method = "squash"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#b58900"
+contrast = 40
+ink = "#657b83"
+opaqueWindows = true
+surface = "#fdf6e3"
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = '"Geist Mono", ui-monospace, "SFMono-Regular"'
+ui = "Geist, Inter"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#859900"
+diffRemoved = "#dc322f"
+skill = "#d33682"
+
+[desktop.open-in-target-preferences]
+global = "ghostty"
+
+[desktop.open-in-target-preferences.perPath]
+"/Users/charlie/.dotfiles" = "ghostty"

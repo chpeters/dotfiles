@@ -1,43 +1,23 @@
 local M = {}
 
-local function biome_available(dirname)
-  if vim.fn.executable("biome") ~= 1 then
-    return false
-  end
-
-  return vim.fs.find({ "biome.json", "biome.jsonc" }, {
-    path = dirname,
-    upward = true,
-  })[1] ~= nil
-end
-
 local function conform_opts()
   return {
     default_format_opts = {
       lsp_format = "fallback",
     },
     formatters_by_ft = {
-      javascript = { "biome", "prettier", "eslint_d", stop_after_first = true },
-      typescript = { "biome", "prettier", "eslint_d", stop_after_first = true },
-      javascriptreact = { "biome", "prettier", "eslint_d", stop_after_first = true },
-      typescriptreact = { "biome", "prettier", "eslint_d", stop_after_first = true },
+      javascript = { "oxfmt", "prettier", "eslint_d", stop_after_first = true },
+      typescript = { "oxfmt", "prettier", "eslint_d", stop_after_first = true },
+      javascriptreact = { "oxfmt", "prettier", "eslint_d", stop_after_first = true },
+      typescriptreact = { "oxfmt", "prettier", "eslint_d", stop_after_first = true },
+      json = { "oxfmt", "prettier", stop_after_first = true },
+      jsonc = { "oxfmt", "prettier", stop_after_first = true },
+      vue = { "oxfmt", "prettier", stop_after_first = true },
       python = { "ruff", stop_after_first = true },
     },
     formatters = {
-      biome = {
-        condition = function(ctx)
-          return biome_available(ctx.dirname)
-        end,
-      },
-      prettier = {
-        condition = function(ctx)
-          return not biome_available(ctx.dirname)
-        end,
-      },
-      eslint_d = {
-        condition = function(ctx)
-          return not biome_available(ctx.dirname)
-        end,
+      oxfmt = {
+        command = "oxfmt",
       },
     },
   }

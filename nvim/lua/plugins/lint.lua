@@ -2,21 +2,12 @@ local M = {}
 
 local function setup_lint()
   local lint = require("lint")
-  local uv = vim.uv or vim.loop
 
   lint.linters_by_ft = {
-    javascript = { "biomejs", "eslint_d" },
-    typescript = { "biomejs", "eslint_d" },
-    javascriptreact = { "biomejs", "eslint_d" },
-    typescriptreact = { "biomejs", "eslint_d" },
     python = { "ruff" },
   }
 
-  local function has_biome_config(dirname)
-    return vim.fs.find({ "biome.json", "biome.jsonc" }, { path = dirname, upward = true })[1] ~= nil
-  end
-
-  local function pick_linter(ft, dirname)
+  local function pick_linter(ft)
     local candidates = lint.linters_by_ft[ft]
     if type(candidates) ~= "table" then
       return nil
@@ -24,12 +15,7 @@ local function setup_lint()
 
     for _, name in ipairs(candidates) do
       if lint.linters[name] then
-        if name == "biomejs" then
-          if has_biome_config(dirname) then
-            return "biomejs"
-          end
-        elseif name == "eslint_d" and vim.fn.executable("eslint_d") ~= 1 then
-        elseif name == "ruff" and vim.fn.executable("ruff") ~= 1 then
+        if name == "ruff" and vim.fn.executable("ruff") ~= 1 then
         else
           return name
         end
@@ -44,9 +30,7 @@ local function setup_lint()
       return
     end
 
-    local filename = vim.api.nvim_buf_get_name(bufnr)
-    local dirname = (filename ~= "" and vim.fn.fnamemodify(filename, ":p:h")) or uv.cwd()
-    local chosen = pick_linter(ft, dirname)
+    local chosen = pick_linter(ft)
     if chosen then
       lint.try_lint({ chosen })
     end
