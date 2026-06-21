@@ -68,9 +68,6 @@
     ~/.codex/AGENTS.md:
       path: codex/AGENTS.md
       if: '[ ! -e ~/.codex/AGENTS.md ] || [ -L ~/.codex/AGENTS.md ]'
-    ~/.codex/config.toml:
-      path: codex/config.toml
-      if: '[ ! -e ~/.codex/config.toml ] || [ -L ~/.codex/config.toml ]'
     ~/.codex/agents:
       path: codex/agents
       if: '[ ! -e ~/.codex/agents ] || [ -L ~/.codex/agents ]'

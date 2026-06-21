@@ -6,3 +6,5 @@
 
 
 
+
+. "$HOME/.local/bin/env"
