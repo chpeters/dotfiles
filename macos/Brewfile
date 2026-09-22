@@ -1,9 +1,16 @@
+tap "oven-sh/bun", trusted: true
+tap "abue-ammar/tinycast", trusted: true
+tap "anomalyco/tap", trusted: true
+
+# Runtimes and package managers
 brew "oven-sh/bun/bun"
 brew "python"
 brew "uv"
 brew "typescript"
 brew "node"
 brew "mise"
+
+# Shell, editor, and command-line tools
 brew "bat"
 brew "eza"
 brew "fd"
@@ -11,20 +18,47 @@ brew "fish"
 brew "fisher"
 brew "fzf"
 brew "git"
+brew "gh"
 brew "imagemagick"
+brew "lazygit"
 brew "neovim"
-brew "postgresql"
+brew "postgresql@18"
 brew "ripgrep"
 brew "sqlite"
 brew "starship"
 brew "tree-sitter-cli"
 brew "zellij"
+
+# Language servers, formatters, and linters used by Neovim
+brew "bash-language-server"
+brew "dockerfile-language-server"
+brew "lua-language-server"
+brew "oxfmt"
+brew "oxlint"
+brew "ruff"
+brew "tailwindcss-language-server"
+brew "ty"
+brew "vscode-langservers-extracted"
+npm "@typescript/native-preview"
+npm "@mdx-js/language-server"
+
+# Native AI CLIs; OpenCode v2 has its own upstream formula.
+brew "anomalyco/tap/opencode-v2"
+cask "claude-code"
+cask "codex"
+
+# Fonts and macOS applications
 cask "font-hasklig"
 cask "font-hasklug-nerd-font"
 cask "google-chrome"
 cask "ghostty"
 cask "karabiner-elements"
 cask "slack"
-cask "raycast"
+cask "abue-ammar/tinycast/tinycast"
 cask "chatgpt"
+cask "claude"
+cask "codex-app"
+cask "handy"
+cask "obsidian"
+cask "opencode-desktop"
 cask "orbstack"

@@ -3,24 +3,29 @@
       create: true
       relink: true
 
-- clean: ["~", "~/bin"]
+- clean: ["~"]
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
 
 - link:
     ~/.bashrc: bashrc
+    ~/.zprofile:
+      path: zprofile
+      if: '[ ! -e ~/.zprofile ] || [ -L ~/.zprofile ]'
     ~/.gitconfig: gitconfig
+    ~/.homebrew/brew.env:
+      path: macos/brew.env
+      if: '[ ! -e ~/.homebrew/brew.env ] || [ -L ~/.homebrew/brew.env ]'
     ~/.ssh/config:
       path: ssh/config
       create: true
 
     ~/.vimrc: vimrc
 
-    ~/.config/ghostty:
-      path: ghostty
-      create: true
-      if: '[ ! -e ~/.config/ghostty ]'
+    ~/.config/ghostty/config.ghostty:
+      path: ghostty/config.ghostty
+      if: '[ ! -e ~/.config/ghostty/config.ghostty ] || [ -L ~/.config/ghostty/config.ghostty ]'
 
     ~/.config/nvim:
       path: nvim
@@ -61,10 +66,6 @@
     ~/.config/karabiner: karabiner
     ~/.config/opencode: opencode
 
-    ~/bin:
-      path: scripts
-      relink: true
-
     ~/.codex/AGENTS.md:
       path: codex/AGENTS.md
       if: '[ ! -e ~/.codex/AGENTS.md ] || [ -L ~/.codex/AGENTS.md ]'
@@ -85,7 +86,7 @@
       path: claude/agents
       if: '[ ! -e ~/.claude/agents ] || [ -L ~/.claude/agents ]'
     ~/.claude/skills:
-      path: claude/skills
+      path: agents/skills
       if: '[ ! -e ~/.claude/skills ] || [ -L ~/.claude/skills ]'
 
     ~/.agents/skills:
