@@ -2,5 +2,24 @@
   "permissions": {
     "defaultMode": "bypassPermissions"
   },
-  "skipDangerousModePermissionPrompt": true
+  "model": "claude-fable-5-1[1m]",
+  "extraKnownMarketplaces": {
+    "compound-engineering-plugin": {
+      "source": {
+        "source": "github",
+        "repo": "EveryInc/compound-engineering-plugin"
+      }
+    }
+  },
+  "effortLevel": "low",
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "low"
+    }
+  },
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "enabledPlugins": {
+    "compound-engineering@compound-engineering-plugin": true
+  }
 }

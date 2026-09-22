@@ -1,6 +1,7 @@
 ---
 name: oss-repo-research
 description: Use this skill when researching public open-source repositories, dependency source, OpenSRC results, Grep MCP or grep.app-style results, upstream code, changelogs, migration guides, framework docs, or implementation examples before a coding decision.
+allowed-tools: Read, Glob, Grep, WebFetch, WebSearch, Bash(opensrc *), Bash(rg *), Bash(git clone *), Bash(git pull *)
 ---
 
 # OSS Repo Research

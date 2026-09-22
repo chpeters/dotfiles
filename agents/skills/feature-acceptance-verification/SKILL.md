@@ -1,6 +1,7 @@
 ---
 name: feature-acceptance-verification
 description: Use this skill when verifying whether a feature is actually complete against acceptance criteria, runtime behavior, tests, UI/API/CLI behavior, or a Ralph-loop completion gate.
+allowed-tools: Read, Glob, Grep, WebFetch, Bash
 ---
 
 # Feature Acceptance Verification

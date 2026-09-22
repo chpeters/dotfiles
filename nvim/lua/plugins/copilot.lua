@@ -1,6 +1,13 @@
 local M = {}
 
 function M.setup(pack)
+  -- Disabled for coding interviews. Set to true to restore Copilot.
+  local enabled = true
+
+  if not enabled then
+    return
+  end
+
   local configured = false
 
   local function ensure_copilot()
