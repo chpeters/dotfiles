@@ -1,6 +1,6 @@
 font-family = HasklugNerdFontMono
 font-size = 15
 adjust-cell-height = 10%
-background = #283237
+background = #263238
 command = /opt/homebrew/bin/fish --login
 env = SHELL=/opt/homebrew/bin/fish

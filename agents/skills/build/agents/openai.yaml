@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build"
+  short_description: "Implement locally with review and verification"
+  default_prompt: "Use $build for the current engineering request."

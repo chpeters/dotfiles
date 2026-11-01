@@ -148,20 +148,6 @@
           }
         }
       },
-      "nvm": {
-        "version": "0.40.4",
-        "bottle": {
-          "rebuild": 0,
-          "root_url": "https://ghcr.io/v2/homebrew/core",
-          "files": {
-            "all": {
-              "cellar": ":any_skip_relocation",
-              "url": "https://ghcr.io/v2/homebrew/core/nvm/blobs/sha256:129cb55048c3be06d3f21eebf9c4dd2287b4f81fea5b4693070bd4d66b1fc18a",
-              "sha256": "129cb55048c3be06d3f21eebf9c4dd2287b4f81fea5b4693070bd4d66b1fc18a"
-            }
-          }
-        }
-      },
       "bat": {
         "version": "0.26.1",
         "bottle": {

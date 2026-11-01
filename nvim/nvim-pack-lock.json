@@ -8,6 +8,10 @@
       "rev": "c1c84b462b611e304d915c837c75d937cae802e6",
       "src": "https://github.com/chpeters/annotator.nvim"
     },
+    "backend-zellij-lua": {
+      "rev": "4e3e588795efb95548dd2ebeaf385a7823821ceb",
+      "src": "https://github.com/smart-splits-nvim/backend-zellij-lua"
+    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",
@@ -79,9 +83,14 @@
       "rev": "d67113f11384c0dad96fced2f7b91f1fc811e97f",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
+    "smart-splits-backend-rex": {
+      "rev": "d15615e5c2deb237535884a921b0401dc2603533",
+      "src": "https://github.com/rawnly/smart-splits-backend-rex"
+    },
     "smart-splits.nvim": {
-      "rev": "033a1ff747652dfa27bfbe90e0844b5cb59a741f",
-      "src": "https://github.com/mrjones2014/smart-splits.nvim"
+      "rev": "5fd4fe53c2df2009e689f61511e3c474a9eccbaf",
+      "src": "https://github.com/mrjones2014/smart-splits.nvim",
+      "version": "'v3.0.0'"
     },
     "snacks.nvim": {
       "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan"
+  short_description: "Resolve decisions into verifiable behavioral slices"
+  default_prompt: "Use $plan for the current engineering request."

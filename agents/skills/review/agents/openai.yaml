@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review"
+  short_description: "Assess correctness and consequential code risks"
+  default_prompt: "Use $review for the current engineering request."

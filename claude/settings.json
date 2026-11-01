@@ -2,24 +2,16 @@
   "permissions": {
     "defaultMode": "bypassPermissions"
   },
-  "model": "claude-fable-5-1[1m]",
-  "extraKnownMarketplaces": {
-    "compound-engineering-plugin": {
-      "source": {
-        "source": "github",
-        "repo": "EveryInc/compound-engineering-plugin"
-      }
-    }
-  },
-  "effortLevel": "low",
+  "model": "claude-opus-5-5",
+  "effortLevel": "high",
   "modelSettings": {
     "claude-fable-5-1": {
       "effortLevel": "low"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "high"
     }
   },
   "tui": "fullscreen",
-  "skipDangerousModePermissionPrompt": true,
-  "enabledPlugins": {
-    "compound-engineering@compound-engineering-plugin": true
-  }
+  "skipDangerousModePermissionPrompt": true
 }

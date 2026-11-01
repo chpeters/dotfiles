@@ -1,0 +1,4 @@
+interface:
+  display_name: "Learn"
+  short_description: "Improve and validate the compounding harness"
+  default_prompt: "Use $learn for the current engineering request."

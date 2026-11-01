@@ -1,0 +1,4 @@
+interface:
+  display_name: "Readback"
+  short_description: "Confirm intent, constraints and completion criteria"
+  default_prompt: "Use $readback for the current engineering request."

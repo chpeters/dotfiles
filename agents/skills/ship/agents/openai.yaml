@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ship"
+  short_description: "Publish authorized changes with verified outcomes"
+  default_prompt: "Use $ship for the current engineering request."

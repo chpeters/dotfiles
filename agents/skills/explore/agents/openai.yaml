@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explore"
+  short_description: "Trace code behavior and architectural rationale"
+  default_prompt: "Use $explore for the current engineering request."

@@ -13,7 +13,7 @@ local function conform_opts()
       json = { "oxfmt", "prettier", stop_after_first = true },
       jsonc = { "oxfmt", "prettier", stop_after_first = true },
       vue = { "oxfmt", "prettier", stop_after_first = true },
-      python = { "ruff", stop_after_first = true },
+      python = { "ruff_fix", "ruff_format" },
     },
     formatters = {
       oxfmt = {

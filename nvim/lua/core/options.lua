@@ -62,8 +62,9 @@ end
 ----------------------------------------------------------------
 
 vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.swapfile = false
+vim.opt.writebackup = true
+vim.opt.swapfile = true
+vim.opt.undofile = true
 
 ----------------------------------------------------------------
 -- Text, Tab, Indent

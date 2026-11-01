@@ -1,0 +1,4 @@
+interface:
+  display_name: "Facts"
+  short_description: "Explain important behavior and practical limits"
+  default_prompt: "Use $facts for the current engineering request."

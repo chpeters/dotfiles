@@ -8,9 +8,16 @@ if status is-interactive
     abbr --add vim nvim
     abbr --add vimdiff "nvim -d"
 
+    if command -sq bat
+        abbr --add cat bat
+    end
+    if command -sq eza
+        abbr --add ls "eza --grid --classify=always --no-quotes --group-directories-first --sort=name"
+    end
+
     if command -sq fzf
         fzf --fish | source
-        set --global --export FZF_DEFAULT_OPTS "--bind='ctrl-o:execute(code {})+abort'"
+        set --global --export FZF_DEFAULT_OPTS "--bind='ctrl-o:execute(nvim {})+abort'"
     end
 
     if command -sq starship

@@ -2,20 +2,28 @@ local M = {}
 
 function M.setup(pack)
   pack.start({
-    { src = pack.gh("mrjones2014/smart-splits.nvim"), name = "smart-splits.nvim" },
+    { src = pack.gh("mrjones2014/smart-splits.nvim"), name = "smart-splits.nvim", version = "v3.0.0" },
+    { src = pack.gh("rawnly/smart-splits-backend-rex") },
+    { src = pack.gh("smart-splits-nvim/backend-zellij-lua") },
   })
 
   local smart_splits = require("smart-splits")
 
-  smart_splits.setup({
-    multiplexer_integration = "zellij",
-  })
+  local backend
+  if vim.env.ZELLIJ then
+    backend = "smart-splits-backend-zellij-lua"
+    require(backend).setup({ move_cursor = { pane_or_tab = true } })
+  elseif vim.env.REX_SESSION then
+    backend = "smart-splits-backend-rex"
+    require(backend).setup({})
+  end
+  smart_splits.setup({ mux = { backend = backend } })
 
   vim.keymap.set("n", "<C-h>", smart_splits.move_cursor_left, { desc = "Move to left split" })
   vim.keymap.set("n", "<C-j>", smart_splits.move_cursor_down, { desc = "Move to lower split" })
   vim.keymap.set("n", "<C-k>", smart_splits.move_cursor_up, { desc = "Move to upper split" })
   vim.keymap.set("n", "<C-l>", smart_splits.move_cursor_right, { desc = "Move to right split" })
-  vim.keymap.set("n", "<C-\\>", smart_splits.move_cursor_previous, { desc = "Move to previous split" })
+  vim.keymap.set("n", "<C-\\>", function() vim.cmd("wincmd p") end, { desc = "Move to previous split" })
 
   vim.keymap.set("n", "<A-h>", smart_splits.resize_left, { desc = "Resize split left" })
   vim.keymap.set("n", "<A-j>", smart_splits.resize_down, { desc = "Resize split down" })

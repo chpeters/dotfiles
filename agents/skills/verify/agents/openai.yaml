@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify"
+  short_description: "Verify real behavior with criterion-level evidence"
+  default_prompt: "Use $verify for the current engineering request."

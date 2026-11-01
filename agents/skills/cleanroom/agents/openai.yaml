@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cleanroom"
+  short_description: "Reassess decisions with fresh neutral evidence"
+  default_prompt: "Use $cleanroom for the current engineering request."

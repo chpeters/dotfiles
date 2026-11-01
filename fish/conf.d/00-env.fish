@@ -6,7 +6,6 @@ end
 
 set --global --export EDITOR nvim
 set --global --export BUN_INSTALL "$HOME/.bun"
-set --global nvm_data "$HOME/.nvm/versions/node"
 
 fish_add_path --global --move --path \
     "$HOME/.antigravity/antigravity/bin" \
