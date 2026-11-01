@@ -4,16 +4,12 @@ function M.setup(pack)
   pack.start({
     { src = pack.gh("mrjones2014/smart-splits.nvim"), name = "smart-splits.nvim", version = "v3.0.0" },
     { src = pack.gh("rawnly/smart-splits-backend-rex") },
-    { src = pack.gh("smart-splits-nvim/backend-zellij-lua") },
   })
 
   local smart_splits = require("smart-splits")
 
   local backend
-  if vim.env.ZELLIJ then
-    backend = "smart-splits-backend-zellij-lua"
-    require(backend).setup({ move_cursor = { pane_or_tab = true } })
-  elseif vim.env.REX_SESSION then
+  if vim.env.REX_SESSION then
     backend = "smart-splits-backend-rex"
     require(backend).setup({})
   end

@@ -1,4 +1,10 @@
 **/node_modules
-coc/extensions/coc-json-data/**
 karabiner/automatic_backups/**
-.Ds_Store
+.DS_Store
+
+# Local OpenCode service credentials
+opencode/service.json
+
+# Generated skills trash and macOS launcher
+agents/skills/.trash/
+macos/OpenMarkdownInNeovim.app/

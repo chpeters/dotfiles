@@ -27,7 +27,6 @@ brew "ripgrep"
 brew "sqlite"
 brew "starship"
 brew "tree-sitter-cli"
-brew "zellij"
 
 # Language servers, formatters, and linters used by Neovim
 brew "bash-language-server"

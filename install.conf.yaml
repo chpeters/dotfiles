@@ -7,6 +7,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [bash macos/build-open-markdown-in-neovim-app.sh, Building Markdown launcher]
 
 - link:
     ~/.bashrc: bashrc
@@ -45,21 +46,12 @@
     ~/.config/fish/functions/gg.fish:
       path: fish/functions/gg.fish
       if: '[ ! -e ~/.config/fish/functions/gg.fish ] || [ -L ~/.config/fish/functions/gg.fish ]'
-    ~/.config/fish/functions/zkill.fish:
-      path: fish/functions/zkill.fish
-      if: '[ ! -e ~/.config/fish/functions/zkill.fish ] || [ -L ~/.config/fish/functions/zkill.fish ]'
     ~/.config/fish/fish_plugins:
       path: fish/fish_plugins
       if: '[ ! -e ~/.config/fish/fish_plugins ] || [ -L ~/.config/fish/fish_plugins ]'
     ~/.config/starship.toml:
       path: starship.toml
       if: '[ ! -e ~/.config/starship.toml ] || [ -L ~/.config/starship.toml ]'
-    ~/.config/zellij/config.kdl:
-      path: zellij/config.kdl
-      if: '[ ! -e ~/.config/zellij/config.kdl ] || [ -L ~/.config/zellij/config.kdl ]'
-    ~/.config/zellij/layouts/work.kdl:
-      path: zellij/layouts/work.kdl
-      if: '[ ! -e ~/.config/zellij/layouts/work.kdl ] || [ -L ~/.config/zellij/layouts/work.kdl ]'
     ~/.config/karabiner: karabiner
     ~/.config/opencode: opencode
 
@@ -84,9 +76,6 @@
       path: agents/skills
       if: '[ ! -e ~/.agents/skills ] || [ -L ~/.agents/skills ]'
 
-    ~/.config/fish/functions/workspace-rex.fish:
-      path: fish/functions/workspace-rex.fish
-      if: '[ ! -e ~/.config/fish/functions/workspace-rex.fish ] || [ -L ~/.config/fish/functions/workspace-rex.fish ]'
     ~/.config/rex/init.lua:
       path: rex/init.lua
       if: '[ ! -e ~/.config/rex/init.lua ] || [ -L ~/.config/rex/init.lua ]'

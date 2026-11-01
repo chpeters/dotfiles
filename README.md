@@ -37,9 +37,8 @@ Start a new Fish shell after configuration changes. `cat` and `ls` abbreviate to
 Bat and Eza only when typed interactively; scripts retain the original commands.
 FZF's Ctrl-O opens the selected path in Neovim.
 
-- `workspace`: create or reuse the Zellij workspace.
-- `workspace-rex`: create or reuse the Rex workspace (Neovim left, two shells right).
-- Either command accepts `--reset`; Rex also accepts `--name NAME`.
+- `workspace`: create or reuse the Rex workspace (Neovim left, two shells right).
+- Accepts `--reset` and `--name NAME`.
 
 Install Rex Beta separately. Enable Settings → Rex Server → Remote Control for
 scripted session selection and app-level resizing. Neovim must have started once
@@ -48,3 +47,17 @@ to install the backend used by `rex/init.lua`.
 When migrating an older checkout, remove only the old dotfiles symlinks at
 `~/.config/fish/functions/cat.fish` and `ls.fish`; the wrappers have been replaced
 by abbreviations. Existing Fish processes may still have the old functions loaded.
+
+## Generated artifacts and package snapshot
+
+`./install` builds `macos/OpenMarkdownInNeovim.app` from its AppleScript source.
+The generated app is ignored by Git; set it as your Markdown opener manually.
+
+`macos/Brewfile` declares the intended setup. `macos/Brewfile.snapshot.json`
+records the installed Homebrew formula and cask versions on the machine where
+it was refreshed, including packages outside the Brewfile. It is an inventory,
+not a version lock or a record of npm packages. After package changes, run:
+
+```sh
+python3 scripts/snapshot-homebrew.py
+```
