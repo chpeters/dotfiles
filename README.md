@@ -28,8 +28,18 @@ Use `vp env current` to inspect resolution and `vp env pin node@VERSION` to
 pin a project. Existing `.nvmrc` files are supported; nvm and mise are not needed.
 Homebrew Node remains available for Homebrew dependencies.
 
-UV and Vite+ maintain additional Fish startup files outside this repo; install
-those tools to recreate their integrations on a new machine.
+Fish adds `~/.local/bin` for UV-installed tools. Vite+ maintains its own Fish
+startup integration; install Vite+ to recreate it on a new machine.
+
+To make Fish the login shell, run these commands from the current shell:
+
+```sh
+fish_path="$(brew --prefix)/bin/fish"
+grep -qxF "$fish_path" /etc/shells || printf '%s\n' "$fish_path" | sudo tee -a /etc/shells
+chsh -s "$fish_path"
+```
+
+Log out and back in for the login-shell change to take effect.
 
 ## Shell and workspaces
 

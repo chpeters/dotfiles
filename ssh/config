@@ -1,20 +1,5 @@
-# Added by OrbStack: 'orb' SSH host for Linux machines
-# This only works if it's at the top of ssh_config (before any Host blocks).
-# This won't be added again if you remove it.
+# OrbStack SSH hosts must precede other Host blocks.
 Include ~/.orbstack/ssh/config
-
-
-
-# --- SourceTree Generated ---
-Host chpeters-GitHub
-	HostName github.com
-	User chpeters
-	PreferredAuthentications publickey
-	IdentityFile /Users/charlie/.ssh/chpeters-GitHub
-	UseKeychain yes
-	AddKeysToAgent yes
-# ----------------------------
-
 
 Host *
     UseKeychain yes

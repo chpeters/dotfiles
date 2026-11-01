@@ -10,10 +10,6 @@
     - [bash macos/build-open-markdown-in-neovim-app.sh, Building Markdown launcher]
 
 - link:
-    ~/.bashrc: bashrc
-    ~/.zprofile:
-      path: zprofile
-      if: '[ ! -e ~/.zprofile ] || [ -L ~/.zprofile ]'
     ~/.gitconfig: gitconfig
     ~/.gitignore_global:
       path: gitignore_global
@@ -24,8 +20,6 @@
     ~/.ssh/config:
       path: ssh/config
       create: true
-
-    ~/.vimrc: vimrc
 
     ~/.config/ghostty/config.ghostty:
       path: ghostty/config.ghostty
@@ -50,7 +44,7 @@
       path: fish/fish_plugins
       if: '[ ! -e ~/.config/fish/fish_plugins ] || [ -L ~/.config/fish/fish_plugins ]'
     ~/.config/starship.toml:
-      path: starship.toml
+      path: fish/starship.toml
       if: '[ ! -e ~/.config/starship.toml ] || [ -L ~/.config/starship.toml ]'
     ~/.config/karabiner: karabiner
     ~/.config/opencode: opencode

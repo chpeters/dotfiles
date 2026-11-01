@@ -10,6 +10,7 @@ set --global --export BUN_INSTALL "$HOME/.bun"
 fish_add_path --global --move --path \
     "$HOME/.antigravity/antigravity/bin" \
     "$BUN_INSTALL/bin" \
+    "$HOME/.local/bin" \
     "$HOME/.gem/ruby/2.6.0/bin"
 
 fish_add_path --global --append --path "$HOME/bin"
